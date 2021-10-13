@@ -1,5 +1,5 @@
-import dotenv from "dotenv";
-import path from "path";
+// import dotenv from "dotenv";
+// import path from "path";
 import express from "express";
 import morgan from "morgan";
 import botRouter from "./routes/botRouter";
