@@ -9,12 +9,9 @@ export class BotController {
 
   add = async (req: Request, res: Response) => {
     try {
-      const botName = req?.body?.name;
-      const botId = req?.body?.id;
-
-      await bot.create({ name: botName, id: botId });
-
-      res.json({ response: "Bot created", status: 201 });
+      const { name, id } = req?.body;
+      await bot.create({ name, id });
+      res.json({ response: "Bot created" });
     } catch (err) {
       res.json({ response: err });
     }
@@ -22,9 +19,8 @@ export class BotController {
 
   get = async (req: Request, res: Response) => {
     try {
-      const botId = req?.params?.id;
-      const result = await bot.findOne({ id: botId }, { _id: 0 }).exec();
-
+      const id = req?.params?.id;
+      const result = await bot.findOne({ id }, { _id: 0 }).exec();
       res.json(result);
     } catch (err) {
       res.json({ response: err });
@@ -33,9 +29,8 @@ export class BotController {
 
   delete = async (req: Request, res: Response) => {
     try {
-      const botId = req?.params?.id;
-      await bot.deleteOne({ id: botId });
-
+      const id = req?.params?.id;
+      await bot.deleteOne({ id });
       res.json({ response: "Bot deleted", status: 204 });
     } catch (err) {
       res.json({ response: err });
@@ -44,13 +39,9 @@ export class BotController {
 
   update = async (req: Request, res: Response) => {
     try {
-      const botId = req?.params?.id;
-      const name = req?.body?.name;
-      const newId = req?.body?.newId;
-      const result = await bot.updateOne(
-        { id: botId },
-        { id: newId, name: name }
-      );
+      const id = req?.params?.id;
+      const { name, newId } = req?.body;
+      const result = await bot.updateOne({ id }, { id: newId, name: name });
 
       res.json({ response: "bot updated with success", status: 204 });
     } catch (err) {
