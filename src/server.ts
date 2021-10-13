@@ -1,5 +1,5 @@
 import { app as server } from "./app";
-import "./services/mongoConneciton";
+import "./services/mongoConnection";
 
 
 const port = process.env.PORT;
