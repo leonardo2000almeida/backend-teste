@@ -5,7 +5,7 @@ import morgan from "morgan";
 import botRouter from "./routes/botRouter";
 import messageRouter from "./routes/messagesRouter";
 
-dotenv.config({ path: path.join(__dirname, "../.env") });
+// dotenv.config({ path: path.join(__dirname, "../.env") });
 
 const app = express();
 
