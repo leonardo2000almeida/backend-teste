@@ -4,9 +4,11 @@
   "description": "a simple backend to recieve and return messages",
   "main": "src/server.ts",
   "scripts": {
+    "tsc": "tsc",
+    "heroku-postbuild":"tsc",
     "start": "node src/dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/server.ts"
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
