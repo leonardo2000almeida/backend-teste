@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const url = `mongodb+srv://develop:${process.env.MONGO_PASSWORD}@testebradesco.zca5q.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`;
+const url = `mongodb+srv://develop:${process.env.MONGO_PASSWORD}@${process.env.CLUSTER}.zca5q.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`;
 
 mongoose.connect(url);
 
