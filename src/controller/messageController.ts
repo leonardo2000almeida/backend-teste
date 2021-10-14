@@ -30,7 +30,9 @@ export class MessageController {
   list = async (req: Request, res: Response) => {
     try {
       const conversationId = req?.query?.conversationId;
-      const result = await message.find({ conversationId });
+      const result = await message.find({
+        conversationId: { $regex: ".*" + conversationId + ".*" },
+      });
       res.json({ response: result });
     } catch (err) {
       res.json({ response: err });
