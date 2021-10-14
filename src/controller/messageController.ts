@@ -21,7 +21,7 @@ export class MessageController {
     try {
       const id = req?.params?.id;
       const result = await message.findOne({ _id: id });
-      res.json({ response: result });
+      res.json({ result });
     } catch (err) {
       res.json({ response: err });
     }
