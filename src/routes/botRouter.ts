@@ -4,6 +4,7 @@ import { BotController } from "../controller/botController";
 const botRouter = Router();
 const botController = new BotController();
 
+botRouter.get("/bots", botController.list);
 botRouter.get("/bots/:id", botController.get);
 botRouter.post("/bots", botController.add);
 botRouter.delete("/bots/:id", botController.delete);

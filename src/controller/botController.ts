@@ -45,7 +45,16 @@ export class BotController {
 
       res.json({ response: "bot updated with success", status: 204 });
     } catch (err) {
-      res.json(JSON.stringify(err, null, 4));
+      res.json({ response: err });
+    }
+  };
+
+  list = async (req: Request, res: Response) => {
+    try {
+      const result = await bot.find();
+      res.json({response: result });
+    } catch (err) {
+      res.json({ response: err });
     }
   };
 }
