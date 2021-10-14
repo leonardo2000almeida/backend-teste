@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "tsc": "tsc",
-    "heroku-postbuild":"tsc",
+    "heroku-postbuild": "tsc",
     "start": "node src/dist/server.js",
     "dev": "ts-node-dev --respawn --ignore-watch node_modules src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/leonardo2000almeida/backend-teste#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^6.0.10",
     "morgan": "^1.10.0",
@@ -28,6 +29,7 @@
     "tsc": "^2.0.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.10.3",
